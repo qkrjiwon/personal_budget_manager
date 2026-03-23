@@ -142,7 +142,7 @@ class Visualiseur:
                 for i in range(len(labels_leg))
             ]
             fig.legend(handles=legende, loc='lower center',
-                       ncol=min(4, len(labels_leg)),
+                       ncol=len(labels_leg),
                        fontsize=9, framealpha=0.9,
                        bbox_to_anchor=(0.5, -0.08))
 
@@ -229,7 +229,7 @@ class Visualiseur:
 
     def graphique_epargne(self, epargne, titre="Progression de l'épargne"):
         """저축 목표 달성률 가로 막대"""
-        fig, ax = plt.subplots(figsize=(8, 3))
+        fig, ax = plt.subplots(figsize=(8, 2))
 
         pourcentage = epargne['pourcentage_atteint']
         accumulated = epargne['epargne_accumulee']

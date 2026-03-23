@@ -99,7 +99,7 @@ class GenerateurPDF:
         contenu.append(Spacer(1, 8))
 
         # 전체 합산 요약 표
-        tableau_data = [['Catégorie', 'Total période', 'Part (%)']]
+        tableau_data = [['Catégories', 'Dépenses cumulées', 'Répartition (%)']]
         for cat, vals in categories.items():
             tableau_data.append([cat, f"{vals['total']:.2f} €", f"{vals['pourcentage']} %"])
 
