@@ -139,11 +139,12 @@ class GenerateurPDF:
                 # 잔액이 마이너스면 빨간색
                 if vals['solde'] is not None and vals['solde'] < 0:
                     solde = f"<font color='red'>{vals['solde']:.2f} €</font>"
+                style_solde = ParagraphStyle('solde', parent=self.style_corps, alignment=TA_CENTER)
                 mois_data.append([
                     mois,
                     f"{vals['depenses']:.2f} €",
                     salaire,
-                    Paragraph(solde, self.style_corps)
+                    Paragraph(solde, style_solde)
                 ])
             col_widths = [5*cm, 4*cm, 4*cm, 4*cm]
         else:
