@@ -89,6 +89,7 @@ class GenerateurPDF:
         # ---- 섹션 1: 월별 파이 차트 ✅ ----
         contenu.append(Paragraph("1. Répartition des dépenses mensuelles par catégorie",
                                   self.style_section))
+        contenu.append(Spacer(1, 10))
 
         # 달 수에 따라 이미지 높이 자동 조정
         nb_mois   = len(moyenne_mensuelle['par_mois'])
@@ -96,7 +97,7 @@ class GenerateurPDF:
         hauteur_camembert = min(20, nb_lignes * 7) * cm
 
         contenu.append(self._ajouter_image(buf_camembert_par_mois, 16*cm, hauteur_camembert))
-        contenu.append(Spacer(1, 8))
+        contenu.append(Spacer(1, 15))
 
         # 전체 합산 요약 표
         tableau_data = [['Catégories', 'Dépenses cumulées', 'Répartition (%)']]
@@ -139,7 +140,7 @@ class GenerateurPDF:
                 # 잔액이 마이너스면 빨간색
                 if vals['solde'] is not None and vals['solde'] < 0:
                     solde = f"<font color='red'>{vals['solde']:.2f} €</font>"
-                style_solde = ParagraphStyle('solde', parent=self.style_corps, alignment=TA_CENTER)
+                style_solde = ParagraphStyle('solde', parent=self.styles['Normal'], alignment=TA_CENTER, fontSize=9, textColor=colors.black)
                 mois_data.append([
                     mois,
                     f"{vals['depenses']:.2f} €",

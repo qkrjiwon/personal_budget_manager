@@ -125,12 +125,12 @@ class Visualiseur:
 
             # 각 파이 차트 제목 = 월 이름
             ax.set_aspect('equal')  
-            ax.set_title(mois, fontsize=11, fontweight='bold', color='#2c3e50', pad=2)
+            ax.set_title(mois, fontsize=13, fontweight='bold', color='#2c3e50', pad=2)
 
             # 총 지출 금액 표시
             total = sum(valeurs)
             ax.text(0, -1.2, f"Total : {total:.2f}€",
-                    ha='center', fontsize=9, color='#7f8c8d')
+                    ha='center', fontsize=11, color='#7f8c8d')
 
         # 범례는 마지막 차트 옆에 한 번만 표시
         if mois_liste:
@@ -143,7 +143,7 @@ class Visualiseur:
             ]
             fig.legend(handles=legende, loc='lower center',
                        ncol=len(labels_leg),
-                       fontsize=9, framealpha=0.9,
+                       fontsize=11, framealpha=0.9,
                        bbox_to_anchor=(0.5, -0.08))
 
         # 빈 칸 숨기기 (마지막 행에 빈 subplot이 있을 때)
