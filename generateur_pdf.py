@@ -87,7 +87,7 @@ class GenerateurPDF:
                                    color=colors.HexColor('#3498db'), spaceAfter=15))
 
         # ---- 섹션 1: 월별 파이 차트 ✅ ----
-        contenu.append(Paragraph("1. Répartition des dépenses par catégorie (par mois)",
+        contenu.append(Paragraph("1. Répartition des dépenses mensuelles par catégorie",
                                   self.style_section))
 
         # 달 수에 따라 이미지 높이 자동 조정

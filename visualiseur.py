@@ -91,7 +91,7 @@ class Visualiseur:
 
         fig, axes = plt.subplots(
             nb_rows, nb_cols,
-            figsize=(7 * nb_cols, 6 * nb_rows)
+            figsize=(6 * nb_cols, 6 * nb_rows)
         )
 
         # axes가 1개일 때도 리스트처럼 다루기 위해 변환
