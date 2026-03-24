@@ -109,7 +109,6 @@ class Visualiseur:
 
             labels    = list(categories.keys())
             valeurs   = [v['total'] for v in categories.values()]
-            pourcents = [v['pourcentage'] for v in categories.values()]
             couleurs  = [COULEURS_CATEGORIES.get(cat, '#95a5a6') for cat in labels]
 
             wedges, texts, autotexts = ax.pie(
